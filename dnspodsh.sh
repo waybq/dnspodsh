@@ -1,24 +1,29 @@
 #!/bin/bash
 
 ##############################
-# dnspodsh v0.4
+# dnspodsh v2017.11.16
 # 基于dnspod api构架的bash ddns客户端
+# 二次修改：52121678@163.com
 # 修改者：guisu2010@gmail.com
 # 原作者：zrong(zengrong.net)
 # 详细介绍：http://zengrong.net/post/1524.htm
 # 创建日期：2012-02-13
-# 更新日期：2015-05-15
+# 更新日期：2015-05-15，见文件版本
 ##############################
-
+ 
+# 定义常规参数
 login_token=""
 login_email=''
 login_password=''
 format="json"
 lang="cn"
-userAgent="dnspodsh/0.4(guisu2010@gmail.com)"
+userAgent="dnspodsh/2017.11.16(52121678@163.com)"
+ 
+# 常规使用token登录
 if [ -n $login_token ];then
 	commonPost="login_token=$login_token&format=$format&lang=$lang"
 else
+# 使用用户名和密码登录
 	commonPost="login_email=$login_email&login_password=$login_password&format=$format&lang=$lang"
 fi
 
